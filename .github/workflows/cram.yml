@@ -1,18 +1,18 @@
 name: Cram testing jose-util
 on:
   push:
-    branches: [ v3, main ]
+    branches: [v3, main, master]
   pull_request: {}
 
 jobs:
   cram:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
 
-      - uses: actions/setup-python@v5
+      - uses: MatteoH2O1999/setup-python@v4
 
       - run: pip install cram
 
